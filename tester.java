@@ -5,6 +5,7 @@ import clarifai2.dto.model.output.ClarifaiOutput;
 import clarifai2.dto.prediction.Concept;
 import com.google.gson.*;
 import java.util.List;
+import java.util.Scanner;
 
 public class tester {
 
@@ -20,6 +21,24 @@ public class tester {
             .withInputs(ClarifaiInput.forImage("https://samples.clarifai.com/metro-north.jpg"))
             .executeSync()
             .get();
-    System.out.println(new GsonBuilder().setPrettyPrinting().create().toJson(predictionResults));
+    Scanner sc =
+        new Scanner(new GsonBuilder().setPrettyPrinting().create().toJson(predictionResults));
+    for (int i = 0; i < 24; i++) {
+      sc.nextLine();
+    }
+    while (sc.hasNextLine()) {
+      System.out.print(sc.nextLine().trim());
+      if (sc.hasNextLine()) {
+        sc.nextLine();
+      }
+      if (sc.hasNextLine()) {
+        System.out.println("  " + sc.nextLine().trim());
+      }
+      for (int i = 0; i < 3; i++) {
+        if (sc.hasNextLine()) {
+          sc.nextLine();
+        }
+      }
+    }
   }
 }
