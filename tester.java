@@ -27,7 +27,10 @@ public class tester {
       sc.nextLine();
     }
     while (sc.hasNextLine()) {
-      System.out.println(sc.nextLine().trim());
+      String name = sc.nextLine();
+      if (!name.contains("}")) {
+        System.out.println(name.trim());
+      }
       if (sc.hasNextLine()) {
         sc.nextLine();
       }
