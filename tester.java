@@ -27,13 +27,14 @@ public class tester {
       sc.nextLine();
     }
     while (sc.hasNextLine()) {
-      System.out.print(sc.nextLine().trim());
+      System.out.println(sc.nextLine().trim());
       if (sc.hasNextLine()) {
         sc.nextLine();
       }
       if (sc.hasNextLine()) {
-        System.out.println("  " + sc.nextLine().trim());
+        System.out.println(sc.nextLine().trim());
       }
+      System.out.println();
       for (int i = 0; i < 3; i++) {
         if (sc.hasNextLine()) {
           sc.nextLine();
