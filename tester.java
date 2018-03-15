@@ -29,13 +29,17 @@ public class tester {
     while (sc.hasNextLine()) {
       String name = sc.nextLine();
       if (!name.contains("}")) {
+        name = name.substring(0, name.length() - 1);
         System.out.println(name.trim());
       }
       if (sc.hasNextLine()) {
         sc.nextLine();
       }
       if (sc.hasNextLine()) {
-        System.out.println(sc.nextLine().trim());
+        String value = sc.nextLine();
+        value = value.trim();
+        value = value.substring(9, value.length());
+        System.out.println(value.trim());
       }
       System.out.println();
       for (int i = 0; i < 3; i++) {
